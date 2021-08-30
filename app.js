@@ -2,7 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   let squares = Array.from(document.querySelectorAll(".grid div"));
   const scoreDisplay = document.querySelector("#score");
-  const startButton = document.querySelector("#start-button");
+  const startBtn = document.querySelector("#start-button");
+  const width = 10;
+  let nextRandom = 0;
+  let timerId;
+  let score = 0;
+  const colors = ["orange", "red", "purple", "green", "blue"];
 
   //The Tetrominoes
   const lTetromino = [
@@ -49,7 +54,42 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   let currentPosition = 4;
-  let current = theTetrominoes[0][0];
+  let currentRotation = 0;
 
-  console.log(current);
+  // randomly select a tetromino and it first rotation
+  let random = Math.floor(Math.random() * theTetrominoes.length);
+  console.log(random);
+  let current = theTetrominoes[random][0];
+
+  function draw() {
+    current.forEach((index) => {
+      squares[currentPosition + index].classList.add("tetromino");
+    });
+  }
+
+  function undraw() {
+    current.forEach((index) => {
+      squares[currentPosition + index].classList.remove("tetromino");
+    });
+  }
+// make tetromino move down every second
+  timerId = setInterval(moveDown, 1000)
+
+  function moveDown(){
+    undraw();
+    currentPosition += width;
+    draw();
+    freeze();
+  }
+  function freeze(){
+      if(current.some(index => squares[currentPosition + index +width].classList.contains('taken'))) {
+          current.forEach(index => squares[currentPosition + index].classList.add('taken'))
+          // start new tetromino falling
+          random = Math.floor(Math.random() * theTetrominoes.length)
+          current = theTetrominoes[random][currentRotation]
+          currentPosition = 4
+          draw()
+      }
+
+  }
 });
