@@ -101,41 +101,9 @@ h3 {
 }
 
 
-  @media screen and (min-width: 1200px) and (max-width: 1400px) {
-    .grid {
-      margin-left: 510px;
-    }
-    #start-button {
-      margin-left: 850px;
-    }
-
-    h3 {
-      margin-left: 850px;
-    }
-    .flechas {
-      position: relative;
-      margin-left:515px;
-      top:-70px
-      
-      
-    }
-    .btn-rotate{
-      position: relative;
-      margin-left:585px;
-      top:-190px
-    }
-    .mini-grid{
-      position: relative;
-      top: -500px;
-      right: -470px;
-    }
-  }
-
- 
-
   
   
-  @media screen and (min-width: 1px) and (max-width: 1199px) {
+  @media screen and (min-width: 1px) and (max-width: 1440px) {
     .grid {
       margin-left: 50px;
       width: 200px;
