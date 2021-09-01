@@ -3,12 +3,13 @@ body {
 }
 
 .container {
-  display: flex;
+  display: block;
 }
 
 .grid {
-  width: 250px;
-  height: 500px;
+  
+  width: 200px;
+  height: 400px;
   display: flex;
   flex-wrap: wrap;
   background-color: rgb(33, 0, 218);
@@ -102,7 +103,7 @@ h3 {
 
   @media screen and (min-width: 1200px) and (max-width: 1400px) {
     .grid {
-      margin-left: 39vw;
+      margin-left: 510px;
     }
     #start-button {
       margin-left: 850px;
@@ -112,73 +113,29 @@ h3 {
       margin-left: 850px;
     }
     .flechas {
-      
-      margin-left:510px;
-      
-      
-    }
-    .btn-rotate{
-      margin-left:580px;
-    }
-  }
-
-  /* responsive md */
-  @media screen and (min-width: 992px) and (max-width: 1199px) {
-    .grid {
-      margin-left: 35vw;
-    }
-    #start-button {
-      margin-left: 700px;
-    }
-
-    h3 {
-      margin-left: 700px;
-    }
-    .flechas {
-      
-      margin-left:440px;
+      position: relative;
+      margin-left:515px;
+      top:-70px
       
       
     }
     .btn-rotate{
-      margin-left:510px;
+      position: relative;
+      margin-left:585px;
+      top:-190px
+    }
+    .mini-grid{
+      position: relative;
+      top: -500px;
+      right: -470px;
     }
   }
 
-  @media screen and (min-width: 768px) and (max-width: 991px) {
-    .grid {
-      margin-left: 30vw;
-    }
-    #start-button {
-      margin-left: 550px;
-    }
+ 
 
-    h3 {
-      margin-left: 550px;
-      font-size: 30px;
-    }
-    .flechas {
-      
-      margin-left:270px;
-      
-      
-    }
-    .btn-rotate{
-      margin-left:340px;
-    }
-  }
-  @media screen and (min-width: 551px) and (max-width: 767px) {
-    .flechas {
-      
-      margin-left:300px;
-      
-      
-    }
-    .btn-rotate{
-      margin-left:370px;
-    }
-  }
-  @media screen and (min-width: 1px) and (max-width: 550px) {
+  
+  
+  @media screen and (min-width: 1px) and (max-width: 1199px) {
     .grid {
       margin-left: 50px;
       width: 200px;
@@ -199,14 +156,22 @@ h3 {
     }
 
     .flechas {
-      
+      position: relative;
       margin-left:55px;
+      bottom: 50px;
       
       
       
     }
     .btn-rotate{
       margin-left:125px;
+      position: relative;
+      bottom: 180px;
+    }
+    .mini-grid{
+      position: relative;
+      top: -400px;
+      right: -235px;
     }
   }
 
