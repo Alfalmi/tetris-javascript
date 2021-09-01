@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let squares = Array.from(document.querySelectorAll(".grid div"));
   const scoreDisplay = document.querySelector("#score");
   const startBtn = document.querySelector("#start-button");
+  const btnRotation = document.querySelector(".btn-rotate");
+  const btnLeft = document.querySelector("#left");
+  const btnRight = document.querySelector("#right");
+  const btnDown = document.querySelector("#down");
   const width = 10;
   let nextRandom = 0;
   let timerId;
@@ -77,8 +81,11 @@ document.addEventListener("DOMContentLoaded", () => {
       squares[currentPosition + index].style.backgroundColor = "";
     });
   }
+  
 
   //assign functions to keyCodes
+
+  
   function control(e) {
     if (e.keyCode === 37 || e.keyCode === 65) {
       moveLeft();
@@ -91,6 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   document.addEventListener("keyup", control);
+  btnLeft.addEventListener("click", moveLeft);
+  btnRight.addEventListener("click", moveRight);
+  btnDown.addEventListener("click", moveDown);
+  btnRotation.addEventListener("click", rotate);
 
   //move down function
   function moveDown() {
